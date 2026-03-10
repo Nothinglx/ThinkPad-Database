@@ -1,0 +1,92 @@
+{
+  "thinkpad_database": [
+    {
+      "id": "thinkpad-yoga-260",
+      "model_name": "ThinkPad Yoga 260",
+      "model_family": "Yoga",
+      "model_generation":"xx60",
+      "update_date": "July 2016",
+      "processor_options": ["6100U","6200U","6300U","6500U","6600U"],
+      "graphics": {
+        "integrated": "Intel HD Graphics 520 ",
+        "discrete": null,
+        "max_resolution": {
+          "mini_dp": "3840x2160@60Hz ",
+          "hdmi": "1920x1080@60Hz "
+        },
+        "multi_display": "Supports 3 independent displays "
+      },
+      "memory": {
+        "max_capacity": "16GB max For None WWAN models, or 8GB 2133MHz DDR4 soldered to systemboard for WWAN models",
+        "type": "2133MHz DDR4 ",
+        "slots": "One DDR4 SO-DIMM sockets For None WWAN models, or soldered to systemboard for WWAN models",
+        "features": "Single-channel capable, non-parity"
+      },
+      "display_options": ["LEN40E2","LEN40E4"],
+      "storage": {
+        "ssd_sata": "6.0Gb/s ",
+        "ssd_pcie": "PCIe NVMe, PCIe 3.0 x 2, 16Gb/s "
+      },
+      "Ethernet":["I219V","I219LM"],
+      "WLAN":["BCM4356","8260AC","18260AC"],
+      "Bluetooth":[
+        {
+          "type": "Integrated",
+          "form": "Integrated in Wi-Fi + Bluetooth combo adapter",
+          "feature":"Bluetooth 4.1 wireless"
+        }
+    ],
+      "WWAN":["EM7455","No_WWAN"],
+      "SIM_Card":[
+        {
+          "type": "Micro-SIM card slot"
+        }
+    ],
+      "Battary":[
+        {
+          "type": "Internal battery",
+          "capacity":"44Wh",
+          "form": "4-cell",
+          "tech":"Li-Ion or Li-Polymer"
+        }
+    ],
+      "ports": [
+        "2 x USB 3.0 (One Always On)",
+        "Mini DisplayPort",
+        "HDMI",
+        "Onelink+ connector",
+        "combo audio / microphone jack",
+        "Micro SD, supports UHS-I SD card",
+        "Smart card reader (Optional)"
+      ],
+      "camera": [
+        "HD 720p resolution, low light sensitive, fixed focus"
+      ],
+      "audio": [
+        "HD Audio, Conexant® CX11852 codec, Dolby® Home Theater® v4 / stereo speakers, 2W x 2 / dual array microphone, combo audio / microphone jack"
+      ],
+      "keyboard": [
+        "6-row, spill-resistant, multimedia Fn keys, optional LED backlight",
+        "TrackPoint pointing device and buttonless Mylar surface multi-touch touchpad"
+      ],
+      "physical": {
+        "dimensions": "309.9mm x 220mm x 17.8mm",
+        "weight": "Starting at 2.90 lb / 1.32 kg ",
+        "case_material": "Carbon-Fiber Hybrid "
+      },
+      "security": [
+        "Power-on/Hard disk/Supervisor password",
+        "Discrete TPM 1.2 and Firmware TPM 2.0",
+        "ThinkEngine",
+        "Touch style fi ngerprint reader on the keyboard bezel",
+        "NFC"
+      ],
+      "system": [
+        "Windows 7 Professional 64",
+        "Windows 7 Professional 64 preinstalled through downgrade rights in Windows 10 Pro 64",
+        "Windows 10 Home 64",
+        "Windows 10 Pro 64"
+      ]
+    }
+  ]
+}
