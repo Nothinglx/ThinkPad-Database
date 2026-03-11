@@ -1,10 +1,10 @@
 {
   "thinkpad_database": [
     {
-      "id": "thinkpad-edge-14",
-      "model_name": "ThinkPad Edge 14",
-      "model_family": "Edge",
-      "model_generation": "14",
+      "id": "thinkpad-edge-14-Intel",
+      "model_name": "ThinkPad Edge 14 (Intel)",
+      "model_family": "E",
+      "model_generation": "xx10",
       "update_date": "October 2010",
       "processor_options": [
         "P4500",
