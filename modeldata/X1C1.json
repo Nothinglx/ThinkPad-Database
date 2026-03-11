@@ -3,8 +3,9 @@
     {
       "id": "thinkpad-x1-carbon-1st-gen",
       "model_name": "ThinkPad X1 Carbon (1st Gen)",
+      "Base_For": "ThinkPad 20th Anniversary Edition",
       "model_family": "X1",
-      "model_generation": "1st Gen",
+      "model_generation": "xx30",
       "update_date": "April 2013",
       "processor_options": [
         "3337U",
@@ -24,7 +25,8 @@
         "slots": "None (soldered)",
         "features": "non-parity"
       },
-      "display_options": [],
+      "display_options": ["LEN40A2","LEN40A0"],
+      "touch": ["Selected model has Capacitive-type multi-touch, supports 10-finger gesture"],
       "storage": {
         "ssd_sata": "SATA 6.0Gb/s, Small Form Factor",
         "ssd_pcie": null,
