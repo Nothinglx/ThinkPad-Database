@@ -7,9 +7,9 @@
       "model_generation":"xx60",
       "update_date": "November 2016",
       "processor_options": ["6700HQ","6820HQ","1505MV5","1575MV5"],
-      "graphics": {
-        "integrated": " Intel HD Graphics 530, Intel HD Graphics P530, or Intel Iris Pro Graphics P580 in processor",
-        "discrete": "NVIDIA Quadro M600M (2GB memory), M3000M (4GB memory),M4000M (4GB memory), or M5000M (8GB memory);",
+
+      "graphics_options": ["HD530","HDP530","Iris_Pro_P580","M600M","M3000M","M4000M","M5000M"],
+      "Display": {
         "max_resolution": {
           "mini_dp": "3840x2160@60Hz ",
           "Thunderbolt": "3840x2160@60Hz ",

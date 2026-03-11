@@ -41,7 +41,7 @@
         "hdd": "SATA 6.0Gb/s, 2.5\" wide, 7mm or 9.5mm high, Active Protection System",
         "sshd": null
       },
-      "Ethernet": ["I217-LM"],
+      "Ethernet": ["I217LM"],
       "WLAN": [
         "11b/g/n",
         "7260N",

@@ -7,9 +7,8 @@
       "model_generation": "xx60",
       "update_date": "",
       "processor_options": ["6700HQ", "6820HQ", "1505MV5", "1535MV5"],
-      "graphics": {
-        "integrated": "Intel HD Graphics 530 or Intel HD Graphics P530 in processor",
-        "discrete": "NVIDIA Quadro M1000M (2GB or 4GB memory) or M2000M (4GB memory)",
+      "graphics_options": ["HD530","HDP530","M1000M","M2000M"],
+      "Display": {
         "max_resolution": {
           "mini_dp": "3840x2160@60Hz",
           "Thunderbolt": "3840x2160@60Hz",

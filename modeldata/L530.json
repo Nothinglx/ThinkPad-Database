@@ -7,15 +7,15 @@
       "model_generation": "xx30",
       "update_date": "August 2014",
       "processor_options": [
-        "i3-2370M",
-        "i3-2348M",
-        "i3-3110M",
-        "i5-2520M",
-        "i5-3210M",
-        "i5-3230M",
-        "i5-3320M",
-        "i5-3360M",
-        "i7-3520M"
+        "2370M",
+        "2348M",
+        "3110M",
+        "2520M",
+        "3210M",
+        "3230M",
+        "3320M",
+        "3360M",
+        "3520M"
       ],
       "graphics_options": ["HD3000","HD4000"],
       "Display": {

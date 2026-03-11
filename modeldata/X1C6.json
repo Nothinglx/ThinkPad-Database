@@ -7,15 +7,14 @@
       "model_generation": "xx80",
       "update_date": "January 2018",
       "processor_options": ["i5-7300U", "i5-8250U", "i5-8350U", "i7-8550U", "i7-8650U"],
-      "graphics": {
-        "integrated": "Intel UHD Graphics 620",
-        "discrete": null,
+      "graphics_options": ["UHD630"],
+      "Display": {
         "max_resolution": {
           "hdmi": "4096x2304@24Hz",
           "displayport": "4096x2304@60Hz (via USB-C)",
           "thunderbolt": "5120x2880@60Hz"
         },
-        "multi_display": "Supports up to 3 independent displays"
+        "multi_display": "Supports 3 independent displays"
       },
       "memory": {
         "max_capacity": "16GB max",
@@ -31,7 +30,7 @@
         "sshd": null,
         "emmc": null
       },
-      "Ethernet": ["I219-V","I219LM"],
+      "Ethernet": ["I219V","I219LM"],
       "WLAN": ["8265AC"],
       "Bluetooth": [
         {
