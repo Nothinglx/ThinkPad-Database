@@ -3,8 +3,9 @@
     {
       "id": "thinkpad-x1-carbon-1st-gen",
       "model_name": "ThinkPad X1 Carbon (1st Gen)",
+      "Base_For": "ThinkPad 20th Anniversary Edition",
       "model_family": "X1",
-      "model_generation": "1st Gen",
+      "model_generation": "xx30",
       "update_date": "April 2013",
       "processor_options": [
         "3337U",
