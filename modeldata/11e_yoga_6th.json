@@ -6,7 +6,7 @@
       "model_family": "11e",
       "model_code":["20SE/20SF"],
       "model_generation": "Gen 6",
-      "update_date": "October 2022",
+      "update_date": "Gen 3",
       "processor_options": [
         "m3-8100Y",
         "i5-8200Y"

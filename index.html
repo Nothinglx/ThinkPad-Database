@@ -968,15 +968,77 @@
             }
         }
 
-        function populateFilterOptions() {
-            const families = [...new Set(masterModelList.map(m => m.model_family).filter(Boolean))].sort();
-            familySelect.innerHTML = '<option value="">全部系列</option>';
-            families.forEach(f => { let opt = document.createElement('option'); opt.value = f; opt.textContent = f; familySelect.appendChild(opt); });
-            const gens = [...new Set(masterModelList.map(m => m.model_generation).filter(Boolean))].sort((a,b) => (parseInt(b)||0) - (parseInt(a)||0));
-            generationSelect.innerHTML = '<option value="">全部代数</option>';
-            gens.forEach(g => { let opt = document.createElement('option'); opt.value = g; opt.textContent = g; generationSelect.appendChild(opt); });
-            familySelect.value = ''; generationSelect.value = ''; currentFamilyValue = ''; currentGenValue = '';
-        }
+function populateFilterOptions() {
+    const families = [...new Set(masterModelList.map(m => m.model_family).filter(Boolean))].sort();
+    familySelect.innerHTML = '<option value="">全部系列</option>';
+    families.forEach(f => { 
+        let opt = document.createElement('option'); 
+        opt.value = f; 
+        opt.textContent = f; 
+        familySelect.appendChild(opt); 
+    });
+
+    // 代数排序：先三位，再四位，再 Gen 开头，其余最后
+    const gens = [...new Set(masterModelList.map(m => m.model_generation).filter(Boolean))].sort((a, b) => {
+        const getPriority = (s) => {
+            if (s.length === 3) return 1;
+            if (s.length === 4) return 2;
+            if (s.toLowerCase().startsWith('gen')) return 3;
+            return 4;
+        };
+        const pa = getPriority(a);
+        const pb = getPriority(b);
+        if (pa !== pb) return pa - pb;
+        // 相同优先级内按自然顺序排序（识别数字）
+        return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+    });
+
+    generationSelect.innerHTML = '<option value="">全部代数</option>';
+    gens.forEach(g => { 
+        let opt = document.createElement('option'); 
+        opt.value = g; 
+        opt.textContent = g; 
+        generationSelect.appendChild(opt); 
+    });
+
+    familySelect.value = ''; 
+    generationSelect.value = ''; 
+    currentFamilyValue = ''; 
+    currentGenValue = '';
+}
+
+function populateSelectFilterOptions() {
+    const families = [...new Set(masterModelList.map(m => m.model_family).filter(Boolean))].sort();
+    selectFamilySelect.innerHTML = '<option value="">全部系列</option>';
+    families.forEach(f => {
+        let opt = document.createElement('option');
+        opt.value = f;
+        opt.textContent = f;
+        selectFamilySelect.appendChild(opt);
+    });
+
+    // 相同的代数优先级排序
+    const gens = [...new Set(masterModelList.map(m => m.model_generation).filter(Boolean))].sort((a, b) => {
+        const getPriority = (s) => {
+            if (s.length === 3) return 1;
+            if (s.length === 4) return 2;
+            if (s.toLowerCase().startsWith('gen')) return 3;
+            return 4;
+        };
+        const pa = getPriority(a);
+        const pb = getPriority(b);
+        if (pa !== pb) return pa - pb;
+        return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+    });
+
+    selectGenerationSelect.innerHTML = '<option value="">全部代数</option>';
+    gens.forEach(g => {
+        let opt = document.createElement('option');
+        opt.value = g;
+        opt.textContent = g;
+        selectGenerationSelect.appendChild(opt);
+    });
+}
 
         function setFilterType(type) {
             currentFilterType = type;
