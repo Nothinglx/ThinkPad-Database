@@ -272,7 +272,7 @@
         ethernet_choices: [],
         wlan_choices: [],
         wwan_choices: [],
-        video_output: { mini_dp: "", hdmi: "", multi_monitor: "" },
+        video_output: { mini_dp: "", usb_c_tbt: "", hdmi: "", multi_monitor: "" },
         mem_spec: { max_cap: "", mem_type: "", slots_desc: "", features: "" },
         storage_spec: { sata_ssd: "", pcie_ssd: "", hdd_desc: "", sshd_desc: "" },
         network: { sim_slots: [], bluetooth_devices: [] },
@@ -372,7 +372,6 @@
                 </div>
             `;
         });
-        html += `<button type="button" class="add-btn" data-add-array="${fieldKey}">添加项</button></div>`;
         return html;
     }
 
@@ -438,6 +437,7 @@
             <div class="section">
                 <div class="section-title">显示输出规格</div>
                 <div class="field-group"><label>Mini DP 最大分辨率</label><input id="vid_minidp" value="${escapeHtml(appState.video_output.mini_dp)}"></div>
+                <div class="field-group"><label>Type-C/Thunderbolt 最大分辨率</label><input id="vid_typec" value="${escapeHtml(appState.video_output.usb_c_tbt)}"></div>
                 <div class="field-group"><label>HDMI 最大分辨率</label><input id="vid_hdmi" value="${escapeHtml(appState.video_output.hdmi)}"></div>
                 <div class="field-group"><label>多屏支持</label><input id="vid_multi" value="${escapeHtml(appState.video_output.multi_monitor)}"></div>
             </div>
@@ -604,6 +604,7 @@
         appState.identity.update_date = getVal('f_update');
         appState.identity.model_code = getVal('f_modelCode');
         appState.video_output.mini_dp = getVal('vid_minidp');
+        appState.video_output.usb_c_tbt = getVal('vid_usb_c_tbt');
         appState.video_output.hdmi = getVal('vid_hdmi');
         appState.video_output.multi_monitor = getVal('vid_multi');
         appState.mem_spec.max_cap = getVal('mem_max');
@@ -684,7 +685,7 @@
             WLAN: appState.wlan_choices,
             WWAN: appState.wwan_choices,
             Display: {
-                max_resolution: { mini_dp: appState.video_output.mini_dp, hdmi: appState.video_output.hdmi },
+                max_resolution: { mini_dp: appState.video_output.mini_dp, hdmi: appState.video_output.hdmi, usb_c_tbt: appState.video_output.usb_c_tbt },
                 multi_display: appState.video_output.multi_monitor
             },
             memory: { max_capacity: appState.mem_spec.max_cap, type: appState.mem_spec.mem_type, slots: appState.mem_spec.slots_desc, features: appState.mem_spec.features },
