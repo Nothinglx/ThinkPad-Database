@@ -91,9 +91,9 @@
         "Privacy Guard software"
       ],
       "system": ["Windows 11 Pro", "Windows 11 Home", "Ubuntu Linux", "No preload OS"],
-      "PSREF_link": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_L380/ThinkPad_L380_Spec.PDF"],
-      "user_guide_link": ["https://download.lenovo.com/pccbbs/mobiles_pdf/l380_l380yoga_s2-3rdgen_and_s2yoga3rdgen_ug_en.pdf"],
-      "HMM_link": ["https://download.lenovo.com/pccbbs/mobiles_pdf/l380_l380yoga_s2-3rdgen_and_s2yoga3rdgen_hmm_en.pdf"],
+      "PSREF_link": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_L13_2_in_1_Gen_6_AMD/ThinkPad_L13_2_in_1_Gen_6_AMD_Spec.pdf"],
+      "user_guide_link": ["https://support.lenovo.com/us/en/documentation/SG10153"],
+      "HMM_link": ["https://download.lenovo.com/pccbbs/mobiles_pdf/l13_gen6_hmm_en.pdf"],
       "add_on_tips": [""],
       "secret_tips": [""]
     }

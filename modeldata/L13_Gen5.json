@@ -96,9 +96,9 @@
         "Certificate-based BIOS authentication"
       ],
       "system": ["Windows 11 Pro", "Windows 11 Home", "Windows 10 Pro 64 (special bid)", "Ubuntu Linux", "No preload OS"],
-      "PSREF_link": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_L380/ThinkPad_L380_Spec.PDF"],
-      "user_guide_link": ["https://download.lenovo.com/km/dita/prod/202506/thinkpad_l13_2in1_g5/20a214b45305af716aa0c84e80ad5bc0_thinkpad_l13_2in1_g5/en/l13_gen5_l13_2in1_gen5_and_s2_gen9_ug_en.pdf"],
-      "HMM_link": ["https://download.lenovo.com/pccbbs/mobiles_pdf/l380_l380yoga_s2-3rdgen_and_s2yoga3rdgen_hmm_en.pdf"],
+      "PSREF_link": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_L13_Gen_5_Intel/ThinkPad_L13_Gen_5_Intel_Spec.pdf"],
+      "user_guide_link": ["https://support.lenovo.com/us/en/documentation/sg10306"],
+      "HMM_link": ["https://download.lenovo.com/pccbbs/mobiles_pdf/l13_gen5_hmm_en.pdf"],
       "add_on_tips": [""],
       "secret_tips": [""]
     }

@@ -118,8 +118,9 @@
         "Windows 11 Pro",
         "No operating system"
       ],
+      "PSREF_link": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_L13_Gen_2_AMD/ThinkPad_L13_Gen_2_AMD_Spec.pdf"],
       "user_guide_link": ["https://download.lenovo.com/pccbbs/mobiles_pdf/l13_gen2_l13yoga_gen2_ug_en.pdf"],
-      "HMM_link": [],
+      "HMM_link": ["https://download.lenovo.com/pccbbs/mobiles_pdf/l13_gen2_l13yoga_gen2_hmm_en.pdf"],
       "add_on_tips": [
         "DASH management option",
         "MIL-STD-810H certified",
