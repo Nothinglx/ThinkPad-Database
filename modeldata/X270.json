@@ -11,7 +11,7 @@
       "graphics_options": ["HD520", "HD620"],
       "Display": {
         "max_resolution": {
-          "usb_c": "4096x2304@60Hz",
+          "usb_c_tbt": "4096x2304@60Hz",
           "hdmi": "4096x2160@24Hz"
         },
         "multi_display": "Supports 3 independent displays"

@@ -18,13 +18,12 @@
         "7300U",
         "7500U"
       ],
-      "graphics": {
-        "integrated": "Intel HD610 / 620",
-        "discrete": null,
+      "graphics_options": ["HD610", "HD620"],
+      "Display": {
         "max_resolution": {
           "hdmi": "1920x1080@60Hz",
-          "usb_type_c": "3840x2160@60Hz"
-        },
+          "usb_c_tbt": "3840x2160@60Hz"
+      },
         "multi_display": "Supports up to 3 independent displays"
       },
       "memory": {

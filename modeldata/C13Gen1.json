@@ -16,7 +16,7 @@
       "Display": {
         "max_resolution": {
           "hdmi": "3840x2160@60Hz",
-          "usb_c": "3840x2160@60Hz"
+          "usb_c_tbt": "3840x2160@60Hz"
         },
         "multi_display": "Supports up to 4 independent displays (Ryzen 5/7) or up to 3 (Athlon/Ryzen 3)"
       },

@@ -16,7 +16,8 @@
       ],
       "graphics_options": [
         "UHD_AlderLake",
-        "Iris_Xe_AlderLake"
+        "Iris_Xe_AlderLake_80EU",
+        "Iris_Xe_AlderLake_96EU"
       ],
       "Display": {
         "max_resolution": {

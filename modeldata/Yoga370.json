@@ -3,7 +3,10 @@
     {
       "id": "thinkpad-yoga-370",
       "model_name": "ThinkPad Yoga 370",
+      "nickname": "ThinkPad S1 2017",
+      "addons":"Also as ThinkPad New S1 or ThinkPad S1 2017",
       "model_family": "Yoga",
+      "nickfamily": "S",
       "model_generation": "xx70",
       "update_date": "February 2017",
       "model_code": ["20JH", "20JJ"],

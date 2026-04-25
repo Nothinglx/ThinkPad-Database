@@ -9,15 +9,16 @@
       "nickfamily": "S",
       "model_generation":"xx60",
       "update_date": "July 2016",
-      "model_code":["20FD/20FE/20GS"],
+      "model_code":["20FD/20FE"],
+      "addon_model_code": ["20GS"],
       "processor_options": ["6100U","6200U","6300U","6500U","6600U"],
       "graphics_options": ["HD520"],
       "Display": {
         "max_resolution": {
-          "mini_dp": "3840x2160@60Hz ",
-          "hdmi": "1920x1080@60Hz "
+          "mini_dp": "3840x2160@60Hz",
+          "hdmi": "1920x1080@60Hz"
         },
-        "multi_display": "Supports 3 independent displays "
+        "multi_display": "Supports 3 independent displays"
       },
       "memory": {
         "max_capacity": "16GB max For None WWAN models, or 8GB 2133MHz DDR4 soldered to systemboard for WWAN models",
