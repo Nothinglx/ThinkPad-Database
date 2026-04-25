@@ -15,7 +15,7 @@
       "graphics_options":["HD510","HD520"],      
       "Display": {
         "max_resolution": {
-          "usb_type_c": "3840x2160@60Hz (via USB-C to DisplayPort)"
+          "usb_c_tbt": "3840x2160@60Hz"
         },
         "multi_display": "Supports multiple displays via USB-C"
       },

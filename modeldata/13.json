@@ -22,7 +22,7 @@
       "Display": {
         "max_resolution": {
           "hdmi": "1920x1080@60Hz",
-          "usb_type_c": "3840x2160@60Hz"
+          "usb_c_tbt": "3840x2160@60Hz"
         },
         "multi_display": "Supports up to 3 independent displays"
       },
@@ -61,7 +61,7 @@
       "ports": [
         "1 x USB 2.0",
         "2 x USB 3.0",
-        "1 x USB Type-C",
+        "1 x USB Type-C (supporting charging and DisplayPort)",
         "HDMI",
         "Lenovo OneLink+ connector",
         "4-in-1 reader (MMC, SD, SDHC, SDXC)",

@@ -11,8 +11,7 @@
       "Display": {
         "max_resolution": {
           "hdmi": "4096x2304@24Hz",
-          "displayport": "4096x2304@60Hz (via USB-C)",
-          "thunderbolt": "5120x2880@60Hz"
+          "usb_c_tbt": "5120x2880@60Hz"
         },
         "multi_display": "Supports 3 independent displays"
       },

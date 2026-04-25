@@ -3,10 +3,14 @@
     {
       "id": "thinkpad-e14-gen7-intel",
       "model_name": "ThinkPad E14 Gen 7 (Intel)",
+      "nickname": "ThinkPad L14p Gen 6",
+      "addons":"Also as ThinkPad L14p Gen 6",
       "model_family": "E",
+      "nickfamily": "L",
       "model_generation": "Gen 7",
       "update_date": "",
       "model_code": ["21SX/21SY","21T9/21TA","21U2/21U3"],
+      "addon_model_code": ["21UA","21UB","22T1"],
       "processor_options": [
         "100U","210H","220U","240H","250U",
         "225U","225H","235U","255H","265U",

@@ -11,7 +11,7 @@
       "graphics_options": ["HD520"],
       "Display": {
         "max_resolution": {
-          "mini_dp": "3840x2160@60Hz ",
+          "mini_dp": "3840x2160@60Hz",
           "hdmi": "1920x1080@60Hz "
         },
         "multi_display": "Supports 3 independent displays "

@@ -11,7 +11,7 @@
       "graphics_options": ["Radeon R7 Graphics", "Radeon R5 Graphics"],
       "Display": {
         "max_resolution": {
-          "usb_c": "3840x2160@60Hz",
+          "usb_c_tbt": "3840x2160@60Hz",
           "hdmi": "4096x2160@24Hz"
         },
         "multi_display": "Supports 3 independent displays"
@@ -28,8 +28,8 @@
         "ssd_pcie": "M.2 SSD / PCIe NVMe, PCIe 3.0 x 2, 16Gb/s",
         "hdd": "SATA 6.0Gb/s, 2.5\" wide, 7mm high"
       },
-      "Ethernet": ["Realtek RTL8111EPV"],
-      "WLAN": ["8265AC", "Realtek RTL8822BE"],
+      "Ethernet": ["RTL8111EPV"],
+      "WLAN": ["8265AC", "RTL8822BE"],
       "Bluetooth": [
         {
           "type": "Integrated",

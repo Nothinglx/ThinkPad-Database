@@ -272,7 +272,7 @@
         ethernet_choices: [],
         wlan_choices: [],
         wwan_choices: [],
-        video_output: { mini_dp: "", hdmi: "", multi_monitor: "" },
+        video_output: { mini_dp: "", usb_c_tbt: "", hdmi: "", multi_monitor: "" },
         mem_spec: { max_cap: "", mem_type: "", slots_desc: "", features: "" },
         storage_spec: { sata_ssd: "", pcie_ssd: "", hdd_desc: "", sshd_desc: "" },
         network: { sim_slots: [], bluetooth_devices: [] },
@@ -321,7 +321,7 @@
     }
 
     async function loadCPU() { cpuOptions = await loadOptions('/ThinkPad-Database/modeldata/CPU/CPU.json'); renderForm(); }
-    async function loadGPU() { gpuOptions = await loadOptions('/ThinkPad-Database/modeldata/graphics/GPU.json'); renderForm(); }
+    async function loadGPU() { gpuOptions = await loadOptions('/ThinkPad-Database/modeldata/Graphics/GPU.json'); renderForm(); }
     async function loadDisplay() { displayOptions = await loadOptions('/ThinkPad-Database/modeldata/Display/Display.json'); renderForm(); }
     async function loadDock() { dockOptions = await loadOptions('/ThinkPad-Database/modeldata/Dock/Dock.json'); renderForm(); }
     async function loadEthernet() { ethernetOptions = await loadOptions('/ThinkPad-Database/modeldata/Ethernet/Ethernet.json'); renderForm(); }
@@ -438,6 +438,7 @@
             <div class="section">
                 <div class="section-title">显示输出规格</div>
                 <div class="field-group"><label>Mini DP 最大分辨率</label><input id="vid_minidp" value="${escapeHtml(appState.video_output.mini_dp)}"></div>
+                <div class="field-group"><label>Type-C/Thunderbolt 最大分辨率</label><input id="vid_usb_c_tbt" value="${escapeHtml(appState.video_output.usb_c_tbt)}"></div>
                 <div class="field-group"><label>HDMI 最大分辨率</label><input id="vid_hdmi" value="${escapeHtml(appState.video_output.hdmi)}"></div>
                 <div class="field-group"><label>多屏支持</label><input id="vid_multi" value="${escapeHtml(appState.video_output.multi_monitor)}"></div>
             </div>
@@ -489,7 +490,7 @@
                 ${renderArrayField('camera_specs', appState.camera_specs, '')}
                 <div class="section-title mt-2">音频</div>
                 ${renderArrayField('audio_specs', appState.audio_specs, '')}
-                <div class="section-title mt-2">⌨键盘</div>
+                <div class="section-title mt-2">键盘</div>
                 ${renderArrayField('keyboard_desc', appState.keyboard_desc, '')}
                 <div class="section-title mt-2">安全</div>
                 ${renderArrayField('security_features', appState.security_features, '')}
@@ -518,7 +519,7 @@
     function attachAllEvents() {
         // 基础 input 绑定
         const basicIds = ['f_id','f_modelName','f_family','f_generation','f_update','f_modelCode',
-                          'vid_minidp','vid_hdmi','vid_multi',
+                          'vid_minidp','vid_usb_c_tbt','vid_hdmi','vid_multi',
                           'mem_max','mem_type','mem_slots','mem_features','st_sata','st_pcie','st_hdd','st_sshd',
                           'phy_dim','phy_weight','phy_material'];
         basicIds.forEach(id => {
@@ -604,6 +605,7 @@
         appState.identity.update_date = getVal('f_update');
         appState.identity.model_code = getVal('f_modelCode');
         appState.video_output.mini_dp = getVal('vid_minidp');
+        appState.video_output.usb_c_tbt = getVal('vid_usb_c_tbt');
         appState.video_output.hdmi = getVal('vid_hdmi');
         appState.video_output.multi_monitor = getVal('vid_multi');
         appState.mem_spec.max_cap = getVal('mem_max');
@@ -684,7 +686,7 @@
             WLAN: appState.wlan_choices,
             WWAN: appState.wwan_choices,
             Display: {
-                max_resolution: { mini_dp: appState.video_output.mini_dp, hdmi: appState.video_output.hdmi },
+                max_resolution: { mini_dp: appState.video_output.mini_dp, hdmi: appState.video_output.hdmi, usb_c_tbt: appState.video_output.usb_c_tbt },
                 multi_display: appState.video_output.multi_monitor
             },
             memory: { max_capacity: appState.mem_spec.max_cap, type: appState.mem_spec.mem_type, slots: appState.mem_spec.slots_desc, features: appState.mem_spec.features },

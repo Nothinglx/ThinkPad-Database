@@ -17,7 +17,7 @@
       "Display": {
         "max_resolution": {
           "hdmi": "3840x2160@30Hz",
-          "usb_c": "3840x2160@60Hz"
+          "usb_c_tbt": "3840x2160@60Hz"
         },
         "multi_display": "Supports up to 3 independent displays"
       },
@@ -37,10 +37,10 @@
       },
       "Ethernet": [],
       "WLAN": [
-        "Realtek RTL8852AE",
-        "Intel Dual Band Wireless-AC 8265",
-        "Intel Wireless-AC 9260",
-        "Intel Wi-Fi 6 AX200"
+        "RTL8852AE",
+        "8265AC",
+        "9260AC",
+        "AX200"
       ],
       "Bluetooth": [
         {
