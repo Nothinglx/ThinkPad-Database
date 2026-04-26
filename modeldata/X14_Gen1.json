@@ -34,7 +34,7 @@
           "feature": "Bluetooth 6.0"
         }
       ],
-      "WWAN": ["MagicBay", "WWAN_Upgradeable_MagicBay"],
+      "WWAN": ["MagicBay_LTE2", "WWAN_Upgradeable_MagicBay"],
       "SIM_Card": [
         {
           "type": "Nano-SIM card slot On MagicBay Module"
