@@ -930,13 +930,13 @@
             try {
                 let fileList = [];
                 try {
-                    const indexResp = await fetch('modeldata/index.json');
+                    const indexResp = await fetch('modeldata/index_old.json');
                     if (indexResp.ok) {
                         const indexData = await indexResp.json();
                         fileList = indexData.files || indexData;
-                    } else throw new Error('index.json 不存在');
+                    } else throw new Error('index_old.json 不存在');
                 } catch (e) {
-                    console.warn('未找到 modeldata/index.json，使用默认文件列表');
+                    console.warn('未找到 modeldata/index_old.json，使用默认文件列表');
                     fileList = ['T460.json'];
                 }
                 const allModels = [];
