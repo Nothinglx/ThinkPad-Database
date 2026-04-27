@@ -1,10 +1,10 @@
 {
   "thinkpad_database": [
     {
-      "id": "thinkpad-850",
-      "model_name": "ThinkPad Power Series 850",
+      "id": "thinkpad-820",
+      "model_name": "ThinkPad Power Series 820",
       "model_family": "ThinkPad Power Series",  
-      "model_code":["6042"],
+      "model_code":["6040"],
       "model_generation": "unknown",
       "update_date": "Augest 1995",
       "processor_options": [
@@ -19,10 +19,10 @@
         "multi_display": "Mirroring only"
       },
       "memory": {
-        "max_capacity": "96MB max",
-        "type": "72 pin FPM SO-DIMM + IC DRAM",
-        "slots": "Two SO-DIMM sockets + Two IC-DRAM sockets",
-        "features": "Must be installed in matched pairs, parity"
+        "max_capacity": "48MB max",
+        "type": "JEDEC 72 pin FPM SO-DIMM",
+        "slots": "Two SO-DIMM sockets",
+        "features": "parity"
       },
       "display_options": [],
       "storage": {
@@ -50,12 +50,10 @@
         "1 x IEEE 1284",
         "VGA",
         "composite In/out",
-        "3.5mm Input jack & output jack & line in & line out",
+        "3.5mm Input jack & output jack",
         "SCSI-2 50 pin connector"
       ],
-      "camera": [
-        "CCD camera, white balance, iris, lens focus"
-      ],
+      "camera": [],
       "audio": [
         "CD quality audio, Crystal Semiconductor CS4231 / Internal stereo speakers 1W"
       ],
@@ -64,8 +62,8 @@
         "TrackPoint III"
       ],
       "physical": {
-        "dimensions": "297.1mm x 259.0mm x 60.9mm / 11.7 x 10.2 x 2.4in",
-        "weight": "7.69 pounds (3.49kg)"
+        "dimensions": "297.1mm x 210.8mm x 55.8mm / 11.7 x 8.3 x 2.2in",
+        "weight": "7.5 pounds (3.40kg)"
       },
       "security": [
         "Power-on password",
