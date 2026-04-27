@@ -10,7 +10,7 @@
       "processor_options": [
         "603e_100"
       ],
-      "graphics_options":["WD90C24A"],      
+      "graphics_options":["WD90C24A"],
       "Display": {
         "max_resolution": {
           "vga": "1024x768@75Hz",
@@ -28,7 +28,7 @@
       "storage": {
         "ssd_sata": null,
         "ssd_pcie": null,
-        "hdd": "SCSI-2 Fast / SCSI-2 50 pin connector",
+        "hdd": "SCSI-2 Fast",
         "sshd": null
       },
       "Ethernet": [],
@@ -50,7 +50,8 @@
         "1 x IEEE 1284",
         "VGA",
         "composite In/out",
-        "3.5mm Input jack & output jack & line in & line out"
+        "3.5mm Input jack & output jack & line in & line out",
+        "SCSI-2 50 pin connector"
       ],
       "camera": [
         "CCD camera, white balance, iris, lens focus"
