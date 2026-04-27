@@ -20,7 +20,7 @@
       },
       "memory": {
         "max_capacity": "96MB max",
-        "type": "EDO SO-DIMM + FPM SIMM",
+        "type": "72 pin FPM SO-DIMM + IC DRAM",
         "slots": "Two SO-DIMM sockets + Two IC-DRAM sockets",
         "features": "Must be installed in matched pairs, parity"
       },
