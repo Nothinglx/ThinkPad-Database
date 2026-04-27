@@ -7,7 +7,7 @@
       "model_generation": "Unknow",
       "update_date": "September 1995",
       "model_code": ["2630"],
-      "processor_options": ["486DX2_25", "486DX2_50", "486DX4_25", "486DX4_75"],
+      "processor_options": [ "486DX2_50", "486DX4_75"],
       "graphics_options": ["CT65545"],
       "Display": {
         "max_resolution": {
@@ -17,7 +17,7 @@
       },
       "memory": {
         "max_capacity": "36MB max for DX2 model and 40MB max for DX4 model",
-        "type": "LPDDR5X 8533MHz (Runs at 7467MHz on Ultra5 336H CPU)",
+        "type": "EDO RAM, One 72PIN SODIMM socket",
         "slots": "4 (DX2 Model) / 8 (DX4 Model) Memory soldered to systemboard, One slot left for upgrade",
         "features": ""
       },
@@ -36,10 +36,11 @@
       "ACadapter": ["Wallmount AC adapter (30 watts) w/ 2 prongs"],
       "ports": [
         "CS93 standard docking Port",
-        "IrDA 1.0",
-        "(2) Type II, or (1) Type III PCMCIA slot",
-        "Power Port",
+        "External FDD/Parallel Port (requires dongle)",
         "RJ11",
+        "(2) Type II, or (1) Type III PCMCIA slot",
+        "IrDA 1.0",
+        "Power Port",
         "Input jack / microphone jack / output jack"
       ],
       "audio": [
