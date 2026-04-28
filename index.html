@@ -156,7 +156,6 @@
         <button id="searchFloatBtn" class="float-btn" title="搜索型号">🔍</button>
         <button id="themeToggleFloat" class="float-btn" title="切换深色/浅色模式">🌙</button>
         <a id="generatorFloatBtn" class="float-btn" title="JSON生成器（但是我没写完）" href="generator.html" target="_blank">🛠️</a>
-        <a id="indexOldFloatBtn" class="float-btn" title="访问旧版" href="index_old.html" target="_blank">🤔</a>
     </div>
 
     <script>
@@ -878,62 +877,136 @@
             }
         }
 
+        // 并发控制池函数
+        async function asyncPool(concurrency, iterable, iteratorFn) {
+            const ret = [];
+            const executing = new Set();
+            for (const item of iterable) {
+                const p = Promise.resolve().then(() => iteratorFn(item));
+                ret.push(p);
+                executing.add(p);
+                const clean = () => executing.delete(p);
+                p.then(clean).catch(clean);
+                if (executing.size >= concurrency) {
+                    await Promise.race(executing);
+                }
+            }
+            return Promise.all(ret);
+        }
+
         async function loadDeviceParts(device) {
             console.log('[调试] 加载设备零件，型号:', device.model_name);
-            const parts = { cpu: [], ethernet: [], wlan: [], wwan: [], display: [], graphics: [], dock: [] };
+            // 收集所有加载任务
+            const tasks = [];
 
+            // 处理器
             if (device.processor_options?.length) {
-                for (const cpuItem of device.processor_options) {
-                    const cpuData = await loadPartData('cpu', cpuItem);
-                    parts.cpu.push({ data: cpuData || { model: cpuItem, note: '等待补充' }, name: cpuItem, type: 'cpu' });
-                }
+                device.processor_options.forEach(cpuItem => {
+                    tasks.push({
+                        type: 'cpu',
+                        filename: cpuItem,
+                        name: cpuItem
+                    });
+                });
             }
 
+            // 显示屏
             if (device.display_options?.length) {
-                for (const dispItem of device.display_options) {
-                    const dispData = await loadPartData('display', dispItem);
-                    parts.display.push({ data: dispData || { type: dispItem, note: '等待补充' }, name: dispItem, type: 'display' });
-                }
+                device.display_options.forEach(dispItem => {
+                    tasks.push({
+                        type: 'display',
+                        filename: dispItem,
+                        name: dispItem
+                    });
+                });
             }
 
+            // 显卡
             if (device.graphics_options?.length) {
-                for (const gpuItem of device.graphics_options) {
-                    const gpuData = await loadPartData('graphics', gpuItem);
-                    parts.graphics.push({ data: gpuData || { model: gpuItem, note: '等待补充' }, name: gpuItem, type: 'graphics' });
-                }
+                device.graphics_options.forEach(gpuItem => {
+                    tasks.push({
+                        type: 'graphics',
+                        filename: gpuItem,
+                        name: gpuItem
+                    });
+                });
             }
 
+            // 有线网卡
             if (device.Ethernet) {
                 const ethItems = parseCommaSeparatedString(device.Ethernet);
-                for (const ethItem of ethItems) {
-                    const ethData = await loadPartData('ethernet', ethItem);
-                    parts.ethernet.push({ data: ethData || { type: ethItem }, name: ethItem, type: 'ethernet' });
-                }
+                ethItems.forEach(ethItem => {
+                    tasks.push({
+                        type: 'ethernet',
+                        filename: ethItem,
+                        name: ethItem
+                    });
+                });
             }
 
+            // 无线网卡
             if (device.WLAN) {
                 const wlanItems = Array.isArray(device.WLAN) ? device.WLAN : [device.WLAN];
-                for (const wlanItem of wlanItems) {
-                    const wlanData = await loadPartData('wlan', wlanItem);
-                    parts.wlan.push({ data: wlanData || { type: wlanItem }, name: wlanItem, type: 'wlan' });
-                }
+                wlanItems.forEach(wlanItem => {
+                    tasks.push({
+                        type: 'wlan',
+                        filename: wlanItem,
+                        name: wlanItem
+                    });
+                });
             }
 
+            // WWAN
             if (device.WWAN) {
                 const wwanItems = Array.isArray(device.WWAN) ? device.WWAN : [device.WWAN];
-                for (const wwanItem of wwanItems) {
-                    const wwanData = await loadPartData('wwan', wwanItem);
-                    parts.wwan.push({ data: wwanData || { type: wwanItem }, name: wwanItem, type: 'wwan' });
-                }
+                wwanItems.forEach(wwanItem => {
+                    tasks.push({
+                        type: 'wwan',
+                        filename: wwanItem,
+                        name: wwanItem
+                    });
+                });
             }
 
+            // 扩展坞
             if (device.dock_support) {
                 const dockItems = Array.isArray(device.dock_support) ? device.dock_support : [device.dock_support];
-                for (const dockItem of dockItems) {
-                    const dockData = await loadPartData('dock', dockItem);
-                    parts.dock.push({ data: dockData || { model: dockItem, note: '等待补充' }, name: dockItem, type: 'dock' });
-                }
+                dockItems.forEach(dockItem => {
+                    tasks.push({
+                        type: 'dock',
+                        filename: dockItem,
+                        name: dockItem
+                    });
+                });
             }
+
+            // 并发加载所有零件文件（最多同时6个）
+            const results = await asyncPool(6, tasks, async (task) => {
+                const data = await loadPartData(task.type, task.filename);
+                return {
+                    type: task.type,
+                    name: task.name,
+                    data: data || { model: task.name, note: '等待补充' }
+                };
+            });
+
+            // 组装为原来的结构
+            const parts = {
+                cpu: [],
+                ethernet: [],
+                wlan: [],
+                wwan: [],
+                display: [],
+                graphics: [],
+                dock: []
+            };
+
+            results.forEach(result => {
+                const { type, name, data } = result;
+                if (parts[type]) {
+                    parts[type].push({ data, name, type });
+                }
+            });
 
             return parts;
         }
@@ -1020,9 +1093,6 @@
                     throw new Error('index.json 格式错误');
                 }
 
-                // 先创建一个映射，用于后续快速查找主型号的轻量对象（特别是为别名提供引用）
-                const modelMap = new Map();
-
                 const allLightModels = [];
 
                 indexData.forEach(item => {
@@ -1035,7 +1105,6 @@
                         _isLight: true
                     };
                     allLightModels.push(mainModel);
-                    modelMap.set(item.name, mainModel);
 
                     // 如果 index 中有 nickname 字段，则创建别名轻量对象
                     if (item.nickname && typeof item.nickname === 'string' && item.nickname.trim() !== '') {
@@ -1046,15 +1115,13 @@
                             filename: item.file,
                             _isLight: true,
                             _isNickname: true,
-                            _originalName: item.name  // 指向主型号名称
+                            _originalName: item.name
                         };
                         allLightModels.push(nickModel);
-                        modelMap.set(item.nickname.trim(), nickModel);
                     }
                 });
 
                 masterModelList = allLightModels;
-
                 populateFilterOptions();
                 applyFilterAndRender();
                 renderFavoritesList();
@@ -1196,7 +1263,7 @@
                         else if (part.type === 'graphics') iconFolder = 'Graphics/Graphics_icons';
                         const iconBase = `modeldata/${iconFolder}/${encodeURIComponent(partData.iconfamily)}`;
                         iconHtml = `<img src="${iconBase}.webp" class="cpu-icon-bg" alt="" 
-                            onerror="this.onerror=null; this.src='${iconBase}.jpg'; this.onerror=function(){ this.src='${iconBase}.png'; this.onerror=function(){ this.style.display='none'; }; };">`;
+                            onerror="this.onerror=null; this.onerror=function(){ this.style.display='none'; }; };">`;
                     }
                 }
                 const menuItems = (fruMenuItem + arkMenuItem).trim();
@@ -1712,7 +1779,7 @@
                 const currentTime = Date.now();
                 const inputValue = searchModalInput.value.trim();
                 
-                if (inputValue === '我也不知道该写点啥') {
+                if (inputValue === 'SDEZ1.65-A') {
                     if (currentTime - lastEnterTime < 500) {
                         secretTipsEnabled = true;
                         const activeItem = document.querySelector('.nav-item.active');
