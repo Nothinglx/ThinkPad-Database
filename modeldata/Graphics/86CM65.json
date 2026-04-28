@@ -1,0 +1,10 @@
+        {
+          "model": "S3 Aurora64V+ (86CM65)",
+          "Shading Units": "?",
+          "base_freq": "110 MHz",
+          "turbo_freq": "135 MHz",
+          "VRAM":"2MB EDO DRAM",
+          "Generation": "Trio",
+          "Feature":"VGA, OpenGL, MPEG-1, VESA® DDC, PCI, DuoView",
+          "iconfamily":"S3"
+        }
