@@ -719,7 +719,6 @@
         "file": "860.json",
         "name": "IBM RS/6000 860",
         "family": "RS/6000",
-        "nickfamily": "ThinkPad Power Series", 
         "generation": "legacy"
     },
     {
