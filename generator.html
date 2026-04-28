@@ -849,7 +849,7 @@
             </div>`;
         });
         listHtml += `</div><div class="badge-count">已选 ${selectedIds.length} 项 | 当前筛选 ${filtered.length} 款</div>`;
-        return `<div class="section"><div class="section-title">${title} <span style="font-size:0.7rem;">(联动筛选)</span></div>
+        return `<div class="section"><div class="section-title">${title} </div>
             <div class="filter-bar" data-filter-type="${listType}">
                 <div class="filter-group"><label>厂商</label><select class="filter-family">${familiesOpt}</select></div>
                 <div class="filter-group"><label>架构</label><select class="filter-arch">${archOpt}</select></div>
@@ -1186,7 +1186,7 @@
                     <div class="component-form-field"><label>加速频率</label><input id="gpu_turbo" value="${escapeHtml(gpuConfig.turbo_freq)}"></div>
                     <div class="component-form-field"><label>VRAM</label><input id="gpu_vram"  value="${escapeHtml(gpuConfig.VRAM)}"></div>
                     <div class="component-form-field"><label>世代</label><input id="gpu_gen"  value="${escapeHtml(gpuConfig.Generation)}"></div>
-                    <div class="component-form-field full-width"><label>功能</label><textarea id="gpu_feature" rows="2">${escapeHtml(gpuConfig.Feature)}</textarea></div>
+                    <div class="component-form-field"><label>功能</label><input id="gpu_feature" value="${escapeHtml(gpuConfig.Feature)}"></div>
                     <div class="component-form-field"><label>图标</label><input id="gpu_iconfamily" value="${escapeHtml(gpuConfig.iconfamily)}"></div>
                 </div>
             </div>
