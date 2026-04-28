@@ -644,6 +644,7 @@
         cores_threads: "",
         base_freq: "",
         turbo_freq: "",
+        ext_freq: "",
         cache: "",
         graphics: "",
         iconfamily: "",
@@ -1140,6 +1141,7 @@
                     <div class="component-form-field"><label>核心/线程数</label><input id="cpu_cores" value="${escapeHtml(cpuConfig.cores_threads)}"></div>
                     <div class="component-form-field"><label>基础频率</label><input id="cpu_base"  value="${escapeHtml(cpuConfig.base_freq)}"></div>
                     <div class="component-form-field"><label>加速频率</label><input id="cpu_turbo"value="${escapeHtml(cpuConfig.turbo_freq)}"></div>
+                    <div class="component-form-field"><label>外频</label><input id="cpu_ext" value="${escapeHtml(cpuConfig.ext_freq)}"></div>
                     <div class="component-form-field"><label>缓存</label><input id="cpu_cache" value="${escapeHtml(cpuConfig.cache)}"></div>
                     <div class="component-form-field"><label>图形处理器</label><input id="cpu_graphics" value="${escapeHtml(cpuConfig.graphics)}"></div>
                     <div class="component-form-field"><label>图标系列</label><input id="cpu_iconfamily" value="${escapeHtml(cpuConfig.iconfamily)}"></div>
@@ -1153,6 +1155,7 @@
         cpuConfig.cores_threads = document.getElementById('cpu_cores')?.value || "";
         cpuConfig.base_freq = document.getElementById('cpu_base')?.value || "";
         cpuConfig.turbo_freq = document.getElementById('cpu_turbo')?.value || "";
+        cpuConfig.ext_freq = document.getElementById('cpu_ext')?.value || "";
         cpuConfig.cache = document.getElementById('cpu_cache')?.value || "";
         cpuConfig.graphics = document.getElementById('cpu_graphics')?.value || "";
         cpuConfig.iconfamily = document.getElementById('cpu_iconfamily')?.value || "";
@@ -1160,7 +1163,7 @@
         document.getElementById('jsonPreview').innerText = JSON.stringify(cpuConfig, null, 2);
     }
     function bindCpuEvents() {
-        const ids = ['cpu_model','cpu_cores','cpu_base','cpu_turbo','cpu_cache','cpu_graphics','cpu_iconfamily','cpu_ark'];
+        const ids = ['cpu_model','cpu_cores','cpu_base','cpu_turbo','cpu_ext','cpu_cache','cpu_graphics','cpu_iconfamily','cpu_ark'];
         ids.forEach(id => {
             const el = document.getElementById(id);
             if(el && !el.dataset.eventsBound) {
