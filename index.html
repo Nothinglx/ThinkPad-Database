@@ -1232,7 +1232,7 @@
                         else if (part.type === 'graphics') iconFolder = 'Graphics/Graphics_icons';
                         const iconBase = `modeldata/${iconFolder}/${encodeURIComponent(partData.iconfamily)}`;
                         iconHtml = `<img src="${iconBase}.webp" class="cpu-icon-bg" alt="" 
-                            onerror="this.onerror=null; this.src='${iconBase}.jpg'; this.onerror=function(){ this.src='${iconBase}.png'; this.onerror=function(){ this.style.display='none'; }; };">`;
+                            onerror="this.onerror=null; this.onerror=function(){ this.style.display='none'; }; };">`;
                     }
                 }
                 const menuItems = (fruMenuItem + arkMenuItem).trim();
@@ -1693,7 +1693,7 @@
         searchModalInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const currentTime = Date.now();
-                if (searchModalInput.value.trim() === 'SDEZ1.65-A') {
+                if (searchModalInput.value.trim() === '我也不知道写点啥') {
                     if (currentTime - lastEnterTime < 500) {
                         secretTipsEnabled = true;
                         const activeItem = document.querySelector('.nav-item.active');
